@@ -1,0 +1,8 @@
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\bin\Debug\TestExamples.exe.config
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\bin\Debug\TestExamples.exe
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\bin\Debug\TestExamples.pdb
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\bin\Debug\EPPlus.dll
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\bin\Debug\EPPlus.xml
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\obj\Debug\TestExamples.csprojResolveAssemblyReference.cache
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\obj\Debug\TestExamples.exe
+c:\users\va.voskoboinik\documents\visual studio 2017\Projects\TestExamples\TestExamples\obj\Debug\TestExamples.pdb
