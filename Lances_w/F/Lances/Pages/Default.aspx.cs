@@ -12,15 +12,16 @@ namespace Lances.Pages {
     public partial class Default : BasePage {
         private string lance_num;
         const string mark = "lance";
-        public string Lance_num { get { return lance_num; } }
+        public string Lance_num { get { return lance_num; } set { lance_num = value; } }
         public string CurrentRoute { get { return HttpContext.Current.Request.Url.AbsoluteUri as string; } }
 
         protected void Page_Load(object sender,EventArgs e) {
-            lance_num = Lance_no_input.Value;
+            Lance_num = Lance_no_input.Value;
+
             Response.Write(CurrentRoute);
 
-            if (!string.IsNullOrEmpty(lance_num)){
-                Lance lance = GetDataFromCache<Lance>(mark+lance_num);
+            if (!string.IsNullOrEmpty(Lance_num)){
+                Lance lance = GetDataFromCache<Lance>(mark+Lance_num);
                 TableBinding(lance);
             }
         }
@@ -28,7 +29,7 @@ namespace Lances.Pages {
         public static string GetExcel(string name){
             //ExcelExport excel = new ExcelExport();
             //string path = excel.Start<DataObject>();
-            string path = ExcelExport.Start<DataObject>();
+            string path = new ExcelExport().Start<Lance>(name);
             return path;
         }
         //private Lance GetDataFromCache(){

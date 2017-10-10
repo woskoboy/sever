@@ -97,7 +97,7 @@
             <script src="js/index.js"></script>
             <script type="text/javascript">
                 function ShowCurrentTime() {
-                    var dataValue = '{ name: "SLava" }';
+                    var dataValue = '{ number: "<%# Lance_num %>" }';
                     $.ajax({
                         type: "POST",
                         url: "/Pages/Default.aspx/GetExcel",

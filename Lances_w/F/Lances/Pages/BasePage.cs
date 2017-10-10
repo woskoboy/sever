@@ -11,7 +11,7 @@ namespace Lances.Pages {
     public class BasePage : System.Web.UI.Page{
         protected T GetDataFromCache<T>(string key){
             T obj;
-            try { obj = (T)Cache[key]; }
+            try { obj = (T)HttpContext.Current.Cache[key]; }
             catch { obj = default(T); }
             return obj;
         }

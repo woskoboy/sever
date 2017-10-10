@@ -10,15 +10,18 @@ using OfficeOpenXml.Style;
 using System.IO;
 
 namespace Lances.Pages {
-    static class ExcelExport {
+    class ExcelExport : BasePage {
+        const string mark = "lance";
+        public string number;
 
-        public static string Start<T>(){
-            //List<T> collection = CreateCollection<T>();
-            List<DataObject> collection = CreateTestCollection();
+        public string Start<T>(string number){
+            this.number = number;
+            List<T> collection = CreateCollection<T>();
+            //List<DataObject> collection = CreateTestCollection();
             return CreateExcel(collection);
         }
 
-        public static string CreateExcel<T>(IEnumerable<T> collection){
+        public string CreateExcel<T>(IEnumerable<T> collection){
             
             string path = string.Format(@"{0}/docs/{1}.xlsx",
                 HttpRuntime.AppDomainAppPath,
@@ -33,8 +36,8 @@ namespace Lances.Pages {
                 foreach (PropertyDescriptor header in TypeDescriptor.GetProperties(collection.First())) {
                     ws.Cells[row,++col].Value = header.Name;
                 }
-                ws.Cells[1,1,1,col].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                ws.Cells[1,1,1,col].Style.Fill.BackgroundColor.SetColor(Color.LightGreen);
+                //ws.Cells[1,1,1,col].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                //ws.Cells[1,1,1,col].Style.Fill.BackgroundColor.SetColor(Color.LightGreen);
 
                 foreach (T obj in collection) {
                     PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(obj);
@@ -43,7 +46,7 @@ namespace Lances.Pages {
                         ws.Cells[row,++i].Value = prop.GetValue(obj);
                     }
                 }
-                ws.Cells[1,1,row,col].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                //ws.Cells[1,1,row,col].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 FileInfo f = new FileInfo(path);
                 pack.SaveAs(f);
                 return path;
@@ -51,28 +54,27 @@ namespace Lances.Pages {
             }
         }
 
-        //public List<T> CreateCollection<T>(){
-        //    string lance_num = Lance_num;
-        //    T obj = GetDataFromCache<T>(lance_num);
-        //    List<T> list = new List<T>();
-        //    list.Add(obj);
-        //    return list;
-        //}
-
-        public static List<DataObject> CreateTestCollection() {
-            DataObject obj1 = new DataObject { Name = "John",Age = "32",City = "Moscow",Job = "Developer" };
-            DataObject obj2 = new DataObject { Name = "Nick",Age = "30",City = "USA",Job = "Designer" };
-            List<DataObject> collection = new List<DataObject>();
-            collection.Add(obj1);
-            collection.Add(obj2);
-            return collection;
+        public List<T> CreateCollection<T>(){
+            string lance_num = number; 
+            T obj = GetDataFromCache<T>(mark + lance_num);
+            List<T> list = new List<T>();
+            list.Add(obj);
+            return list;
         }
+        //public static List<DataObject> CreateTestCollection() {
+        //    DataObject obj1 = new DataObject { Name = "John",Age = "32",City = "Moscow",Job = "Developer" };
+        //    DataObject obj2 = new DataObject { Name = "Nick",Age = "30",City = "USA",Job = "Designer" };
+        //    List<DataObject> collection = new List<DataObject>();
+        //    collection.Add(obj1);
+        //    collection.Add(obj2);
+        //    return collection;
+        //}
     }
 
-    class DataObject {
-        public string Name { get; set; }
-        public string Age { get; set; }
-        public string City { get; set; }
-        public string Job { get; set; }
-    }
+    //class DataObject {
+    //    public string Name { get; set; }
+    //    public string Age { get; set; }
+    //    public string City { get; set; }
+    //    public string Job { get; set; }
+    //}
 }
