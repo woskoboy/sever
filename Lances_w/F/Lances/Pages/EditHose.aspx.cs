@@ -7,8 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Lances.Pages
 {
-    public partial class EditHose : BasePage
-    {
+    public partial class EditHose : BasePage{
         private string DATE_INSTALL = "DateInstall";
         private string DATE_DEINSTALL = "DateDeinstall";
         private Dictionary<string, string> dict;
@@ -21,12 +20,10 @@ namespace Lances.Pages
         }
         protected void Page_Init(object sender, EventArgs e){
             SaveEditButton.Click += SaveEditHandler;
-
         }
         protected void Page_PreRender(object sender, EventArgs e){
             Hose Hose = GetDataFromCache<Hose>(mark+Hose_num);
-            if (Hose != null)
-            {
+            if (Hose != null){
                 dict = GetDictFromObject(Hose);
                 FillControls(dict, EditTableDiv.Controls);
 
@@ -35,13 +32,12 @@ namespace Lances.Pages
             }
 
         }
-        private void SaveEditHandler(object sender, EventArgs e)
-        {
+        private void SaveEditHandler(object sender, EventArgs e){
             Hose Hose = GetObjectFromControls(new Hose { }, EditTableDiv.Controls);
             Hose.DateInstall = Request.Form[DATE_INSTALL];
             Hose.DateDeinstall = Request.Form[DATE_DEINSTALL];
 
-            Cache.Insert(mark+Hose_num, Hose, null, DateTime.Now.AddMinutes(10), TimeSpan.Zero);
+            Cache.Insert(mark+Hose_num, Hose, null, DateTime.Now.AddMinutes(60), TimeSpan.Zero);
             Response.Redirect("~/metalhoses/" + Hose_num);
         }
     }

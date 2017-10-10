@@ -103,76 +103,76 @@ namespace Lances.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Team;
         
         /// <summary>
-        /// part1 элемент управления.
+        /// Part1 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part1;
         
         /// <summary>
-        /// part2 элемент управления.
+        /// Part2 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part2;
         
         /// <summary>
-        /// part3 элемент управления.
+        /// Part3 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part3;
         
         /// <summary>
-        /// part4 элемент управления.
+        /// Part4 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part4;
         
         /// <summary>
-        /// part5 элемент управления.
+        /// Part5 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part5;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part5;
         
         /// <summary>
-        /// part6 элемент управления.
+        /// Part6 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part6;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part6;
         
         /// <summary>
-        /// part7 элемент управления.
+        /// Part7 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part7;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part7;
         
         /// <summary>
-        /// part8 элемент управления.
+        /// Part8 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText part8;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Part8;
         
         /// <summary>
         /// SaveEditButton элемент управления.

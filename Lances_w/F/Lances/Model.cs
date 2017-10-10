@@ -28,8 +28,7 @@ namespace Lances.Pages {
         public string DateDeinstall { get; set; }
     }
 
-    public class Hose
-    {
+    public class Hose{
         public string Hose_no { get; set; }
         public string Cv_no { get; set; }
         public string Mpk { get; set; }
@@ -40,5 +39,13 @@ namespace Lances.Pages {
         public string DateDeinstall { get; set; }
         public string Jobs { get; set; }
         public string Reason { get; set; }
+        public string Part1 { get; set; }
+        public string Part2 { get; set; }
+        public string Part3 { get; set; }
+        public string Part4 { get; set; }
+        public string Part5 { get; set; }
+        public string Part6 { get; set; }
+        public string Part7 { get; set; }
+        public string Part8 { get; set; }
     }
 }

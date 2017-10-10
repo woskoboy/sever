@@ -9,9 +9,6 @@ using System.Web.UI.HtmlControls;
 
 namespace Lances.Pages {
     public partial class EditLance : BasePage {
-        //public event CommandEventHandler JobsSelect;
-        //public event CommandEventHandler ReasonSelect;
-
         private string DATE_INSTALL = "DateInstall";
         private string DATE_DEINSTALL = "DateDeinstall";
         private Dictionary<string,string> dict;
@@ -36,57 +33,15 @@ namespace Lances.Pages {
                 Page.ClientScript.RegisterHiddenField(DATE_INSTALL+"_hidden", lance.DateInstall);
                 Page.ClientScript.RegisterHiddenField(DATE_DEINSTALL+"_hidden", lance.DateDeinstall);
             }
-            //foreach (Control c in EditTableDiv.Controls) {
-            //    if (c.ID != null && dict.ContainsKey(c.ID)) {
-            //        if (c is HtmlInputText)
-            //            ((HtmlInputText)c).Value = dict[c.ID];
-            //        if (c is HtmlTextArea)
-            //            ((HtmlTextArea)c).Value = dict[c.ID];
-            //    }
-            //}   
-            //SetPropertyForControl<Control>(c, dict);
         }
         private void SaveEditHandler(object sender,EventArgs e){
-            //string lance_num = lance_no.Value;
-            //ViewState[DATE_INSTALL] = 
-            //ViewState[DATE_DEINSTALL] = 
             Lance lance = GetObjectFromControls(new Lance { }, EditTableDiv.Controls);
             lance.DateInstall = Request.Form[DATE_INSTALL];
             lance.DateDeinstall = Request.Form[DATE_DEINSTALL];
-            //lanceEdit = new Lance {
-            //    Lance_no = for_lance_label_out.Text,
-            //    Cv_no = Cv_no.Value,
-            //    Lance_len = Lance_len.Value,
-            //    Mpk = Mpk.Value,
-            //    Reason = Reason.Value,
-            //    Jobs_Other = Jobs_Other.Value,
-            //    Reper_label = Reper_label.Value,
-            //    Spec_marks = Spec_marks.Value,
-            //    Dia = Dia.Value,
-            //    Galka = Galka.Value,
-            //    Nozzle_wear = Nozzle_wear.Value,
-            //    Other = Other.Value,
-            //    Tip_no = Tip_no.Value,
-            //    Tip_comp = Tip_comp.Value,
-            //    Tip_durability = Tip_durability.Value,
-            //    DateInstall = (string)ViewState["date_m"],
-            //    DateDeinstall = (string)ViewState["date_d"],
-            //};
+
             Cache.Insert(mark+lance_num,lance,null,DateTime.Now.AddMinutes(10),TimeSpan.Zero);
             Response.Redirect("~/lances/"+lance_num);
         }
-        // обработчик select Выполненных работ
-        //private void JobsHandler(object sender,CommandEventArgs e){
-        //    switch (e.CommandArgument.ToString()) {
-        //        case "1":  //установлен новый наконечник 
-        //            Jobs_Other.Visible = false; break;// TipProperty.Visible = true;
-        //        case "4": // пункт другое
-        //            Jobs_Other.Visible = true; break; // TipProperty.Visible = false;
-        //        case "0": case "2": case "3": case "5": // остальные пункты Выполненных работ
-        //            Jobs_Other.Visible = false; break; //TipProperty.Visible = false;
-        //        default: break;
-        //    }
-        //}
 
         // обработчик select Причина замены
         //private void ReasonHandler(object sender,CommandEventArgs e){

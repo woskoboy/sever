@@ -138,7 +138,6 @@
             </tr>
         </table>
 
-
         <table class="table alert-warning">
             <thead>
             <tr>
@@ -156,45 +155,21 @@
             </tr>
                 </thead><tbody>
             <tr>
-                <td><input id=part1 runat="server" class="form-control" /></td>
-                <td><input id=part2 runat="server" class="form-control" /></td>
-                <td><input id=part3 runat="server" class="form-control" /></td>
-                <td><input id=part4 runat="server" class="form-control" /></td>
-                <td><input id=part5 runat="server" class="form-control" /></td>
-                <td><input id=part6 runat="server" class="form-control" /></td>
-                <td><input id=part7 runat="server" class="form-control" /></td>
-                <td><input id=part8 runat="server" class="form-control" /></td>
+                <td><input id=Part1 runat="server" class="form-control" /></td>
+                <td><input id=Part2 runat="server" class="form-control" /></td>
+                <td><input id=Part3 runat="server" class="form-control" /></td>
+                <td><input id=Part4 runat="server" class="form-control" /></td>
+                <td><input id=Part5 runat="server" class="form-control" /></td>
+                <td><input id=Part6 runat="server" class="form-control" /></td>
+                <td><input id=Part7 runat="server" class="form-control" /></td>
+                <td><input id=Part8 runat="server" class="form-control" /></td>
             </tr>
                     </tbody>
         </table>
     <br />
-
-
         <asp:Button class="btn btn-danger" id="SaveEditButton" runat="server" Text="Сохранить"/>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            var date_input = $('input[name="DateInstall"]'); //our date input has the name "date"
-            var container = $('.bootstrap-iso').length > 0 ? $('#DateInstall').parent() : "body";
-            date_input.datepicker({
-                format: 'dd/mm/yyyy',
-                container: container,
-                todayHighlight: true,
-                autoclose: true,
-                language: 'ru',
-            });;
-            var date_input = $('input[name="DateDeinstall"]'); //our date input has the name "date"
-            var container = $('.bootstrap-iso').length > 0 ? $('#DateDeinstall').parent() : "body";
-            date_input.datepicker({
-                format: 'dd/mm/yyyy',
-                container: container,
-                todayHighlight: true,
-                autoclose: true,
-                language: 'ru',
-            });;
-        })
-    </script>
     <script>
             ; (function ($) {
                 $.fn.datepicker.dates['ru'] = {
@@ -212,34 +187,47 @@
             }(jQuery));
     </script>
     <script>
-            $(document).ready(function () {
-                var date = $("#DateInstall_hidden").attr("value");
-                $("#DateInstall").attr("value", date);
-
-                date = $("#DateDeinstall_hidden").attr("value");
-                $("#DateDeinstall").attr("value", date);
-            });
-    </script>
-    <script>
         $(document).ready(function () {
-            $("#DL_Reasons").change(function () {
-                    var str = "";
-                    $("#DL_Reasons option:selected").each(function () {
-                        str += $(this).text() + ", ";
-                    });
-                    $('#Reason').text(str);
-                });
-        });
-    </script>
-    <script>
-            $(document).ready(function () {
-                $("#DL_Jobs").change(function () {
-                    var str = "";
-                    $("#DL_Jobs option:selected").each(function () {
-                        str += $(this).text() + ", ";
-                    });
-                    $('#Jobs').text(str);
-                });
+            var date_input = $('input[name="DateInstall"]');
+            var container = $('.bootstrap-iso').length > 0 ? $('#DateInstall').parent() : "body";
+            date_input.datepicker({
+                format: 'dd/mm/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+                language: 'ru',
             });
+            var date_input = $('input[name="DateDeinstall"]');
+            var container = $('.bootstrap-iso').length > 0 ? $('#DateDeinstall').parent() : "body";
+            date_input.datepicker({
+                format: 'dd/mm/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+                language: 'ru',
+            });
+
+            var date = $("#DateInstall_hidden").attr("value");
+            $("#DateInstall").attr("value", date);
+
+            date = $("#DateDeinstall_hidden").attr("value");
+            $("#DateDeinstall").attr("value", date);
+
+            $("#DL_Reasons").change(function () {
+                var str = "";
+                $("#DL_Reasons option:selected").each(function () {
+                    str += $(this).text() + ", ";
+                });
+                $('#Reason').text(str);
+            });
+
+            $("#DL_Jobs").change(function () {
+                var str = "";
+                $("#DL_Jobs option:selected").each(function () {
+                    str += $(this).text() + ", ";
+                });
+                $('#Jobs').text(str);
+            });
+        });
     </script>
 </asp:Content>

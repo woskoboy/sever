@@ -73,7 +73,6 @@
     <Content Include="Pages\css\style.css" />
     <Content Include="Pages\EditHose.aspx" />
     <Content Include="Pages\js\index.js" />
-    <Content Include="Pages\MyControl.ascx" />
     <Content Include="Scripts\bootstrap-datepicker.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
@@ -142,13 +141,6 @@
     </Compile>
     <Compile Include="Pages\MetalHoses.aspx.designer.cs">
       <DependentUpon>MetalHoses.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MyControl.ascx.cs">
-      <DependentUpon>MyControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\MyControl.ascx.designer.cs">
-      <DependentUpon>MyControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
