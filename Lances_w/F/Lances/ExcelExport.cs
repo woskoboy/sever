@@ -12,8 +12,10 @@ using System.IO;
 namespace Lances.Pages {
     static class ExcelExport {
 
-        public static string Start(){
-            return ExcelExport.CreateExcel(ExcelExport.CreateCollection());
+        public static string Start<T>(){
+            //List<T> collection = CreateCollection<T>();
+            List<DataObject> collection = CreateTestCollection();
+            return CreateExcel(collection);
         }
 
         public static string CreateExcel<T>(IEnumerable<T> collection){
@@ -49,7 +51,15 @@ namespace Lances.Pages {
             }
         }
 
-        public static List<DataObject> CreateCollection(){
+        //public List<T> CreateCollection<T>(){
+        //    string lance_num = Lance_num;
+        //    T obj = GetDataFromCache<T>(lance_num);
+        //    List<T> list = new List<T>();
+        //    list.Add(obj);
+        //    return list;
+        //}
+
+        public static List<DataObject> CreateTestCollection() {
             DataObject obj1 = new DataObject { Name = "John",Age = "32",City = "Moscow",Job = "Developer" };
             DataObject obj2 = new DataObject { Name = "Nick",Age = "30",City = "USA",Job = "Designer" };
             List<DataObject> collection = new List<DataObject>();

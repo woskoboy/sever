@@ -13,18 +13,23 @@ namespace Lances.Pages {
         private string lance_num;
         const string mark = "lance";
         public string Lance_num { get { return lance_num; } }
+        public string CurrentRoute { get { return HttpContext.Current.Request.Url.AbsoluteUri as string; } }
 
         protected void Page_Load(object sender,EventArgs e) {
             lance_num = Lance_no_input.Value;
+            Response.Write(CurrentRoute);
+
             if (!string.IsNullOrEmpty(lance_num)){
                 Lance lance = GetDataFromCache<Lance>(mark+lance_num);
                 TableBinding(lance);
             }
         }
-
         [WebMethod]
-        public static string GetCurrentTime(string name){
-            return ExcelExport.Start();
+        public static string GetExcel(string name){
+            //ExcelExport excel = new ExcelExport();
+            //string path = excel.Start<DataObject>();
+            string path = ExcelExport.Start<DataObject>();
+            return path;
         }
         //private Lance GetDataFromCache(){
         //    key = GetLanceFromRequestOrConrol();
@@ -48,7 +53,7 @@ namespace Lances.Pages {
         }
         private void RequestButtonHandler(object sender,EventArgs e){
             EditLink.Visible = true;
-            EditLink.NavigateUrl = GetRouteUrl("lance", new { lance = lance_num});//Lance_no_input.Value });
+            EditLink.NavigateUrl = GetRouteUrl("lance", new { lance = Lance_num });//Lance_no_input.Value });
             //int fblow_no;
             //Int32.TryParse(First_blow_hiden.Value, out fblow_no
             //WorkerDB worker = new WorkerDB();

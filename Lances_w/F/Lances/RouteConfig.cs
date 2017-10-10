@@ -9,6 +9,7 @@ namespace Lances {
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.MapPageRoute(null,"","~/Pages/Default.aspx");
+            routes.MapPageRoute("default","","~/Pages/Default.aspx");
 
             routes.MapPageRoute(null,"lances","~/Pages/Default.aspx");
             routes.MapPageRoute(null,"lances/{lance}","~/Pages/Default.aspx");

@@ -18,7 +18,7 @@ namespace WebApplication1 {
 
         [WebMethod]
         public static string GetCurrentTime(string name){
-            
+
             return ExcelExport.Start();
         }
 

@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Lances.Pages.Default" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ContentPlaceHolderID="DefaultPage" runat="server" ID="DefPage">
-    
+
     <div style="text-align: center;">     
     <h3 class="page-header"> Информация о фурме </h3>
 
@@ -78,14 +78,16 @@
         </table>
 
         <%--<input ID="First_blow_hiden" name="First_blow" runat="server" type="text" class="form-control" value="3706869" style="visibility:hidden">--%>
-    </div>  
-    
-                <div>
-                <link rel="stylesheet" href="css/style.css" />
-                <script src='https://use.fontawesome.com/2473308824.js'></script>
-                <script src="js/index.js"></script>
-                <script src='js/jquery.min.js'></script>
-            <asp:Literal ID="literal" runat="server"></asp:Literal><br/>
+    </div>
+
+
+   
+</div>
+        
+        <div>
+            <asp:Literal ID="literal" runat="server"></asp:Literal><br />
+            
+
             <button id="excelBut" type="button" class="button" onclick="ShowCurrentTime()">
                 <span class="submit">Excel</span>
                 <span class="loading"><i class="fa fa-refresh"></i></span>
@@ -98,7 +100,7 @@
                     var dataValue = '{ name: "SLava" }';
                     $.ajax({
                         type: "POST",
-                        url: "Default.aspx/GetCurrentTime",
+                        url: "/Pages/Default.aspx/GetExcel",
                         data: dataValue,
                         contentType: 'application/json; charset=utf-8',
                         dataType: 'json',
@@ -108,14 +110,14 @@
                         success: OnSuccess,
                     });
                     function OnSuccess(response) {
-                        //alert(response.d);
+                        alert(response.d);
                         $("#link").attr("style", "visibility:visible");
                         $("#link").attr("href", response.d);
                     }
                 }
             </script>
-        </div><br/>
-</div>
-        
+        </div>
+    
 </asp:Content>
+
 

@@ -73,7 +73,6 @@
     <Content Include="Pages\css\style.css" />
     <Content Include="Pages\EditHose.aspx" />
     <Content Include="Pages\js\index.js" />
-    <Content Include="Pages\js\jquery.min.js" />
     <Content Include="Pages\MyControl.ascx" />
     <Content Include="Scripts\bootstrap-datepicker.css" />
     <Content Include="Global.asax" />
@@ -172,6 +171,9 @@
     </Compile>
     <Compile Include="WorkerDB.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -187,7 +189,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60578</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60578/</IISUrl>
+          <IISUrl>http://localhost:60000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

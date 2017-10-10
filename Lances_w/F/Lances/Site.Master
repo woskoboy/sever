@@ -6,7 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!--Font Awesome (added because you use icons in your prepend/append)-->
     <link href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Pages/css/style.css" />
     <link href="/Scripts/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Include jQuery -->
     <%--<script src="Scripts/jquery-3.2.1.min.js"></script>--%>
     <script type="text/javascript" src="/Scripts/jquery-1.11.3.min.js"></script>
@@ -15,12 +17,15 @@
     <link rel="stylesheet" href="/Scripts/bootstrap-datepicker.css">
     <script src="Scripts/moment-with-locales.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
+
+    <%--<link rel="stylesheet" href="css/style.css" />--%>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div class="bs-component">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -42,8 +47,12 @@
             </nav>
             <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
         </div>
-        
-        <div><asp:ContentPlaceHolder ID="DefaultPage" runat="server"></asp:ContentPlaceHolder></div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="DefaultPage" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
         <div><asp:ContentPlaceHolder ID="EditLanceContent" runat="server"></asp:ContentPlaceHolder></div>
         <div><asp:ContentPlaceHolder ID="AvailabilityContent" runat="server"></asp:ContentPlaceHolder></div>
         <div><asp:ContentPlaceHolder ID="MetalHosesContent" runat="server"></asp:ContentPlaceHolder></div>
